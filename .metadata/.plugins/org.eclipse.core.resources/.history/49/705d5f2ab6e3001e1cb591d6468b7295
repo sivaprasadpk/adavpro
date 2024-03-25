@@ -1,0 +1,114 @@
+package com.sathya.servlet;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+
+import org.apache.commons.io.IOUtils;
+
+
+@WebServlet("/BookingServlet")
+@MultipartConfig
+public class BookingServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
+		//read a value
+		String username=request.getParameter("UserName");
+		LocalDate checkInDate = Date.valueOf(request.getParameter("checkin")).toLocalDate();
+		LocalDate checkOutDate = Date.valueOf(request.getParameter("checkout")).toLocalDate();
+		int duration = calculateDaysBetween(checkInDate, checkOutDate);
+
+		Part part=request.getPart("proImage");
+		InputStream inputStream=part.getInputStream();
+		byte[] proImage = IOUtils.toByteArray(inputStream);
+	
+			
+		//calculate billing details for booking rooms
+		int price1 = 800;
+		int price2 = 500;
+		int price3 = 300;
+		int price = 0;
+		//System.out.println(price1);
+
+		String type = request.getParameter("type");
+		System.out.println(type);
+		if (type.equalsIgnoreCase("luxury"))
+			price = price1;
+		else if (type.equalsIgnoreCase("deluxe"))
+			price = price2;
+		else if(type.equals("normal"))
+			price = price3;
+
+		double totalRent = (double) duration * price;
+		double sgst = totalRent * 0.09;
+		double cgst = sgst;
+		double discount = 0.05 * (totalRent + sgst + cgst);
+		double totalPrice = totalRent + sgst + cgst - discount;
+
+		BookingDetails details = new BookingDetails();
+		details.setUsername(username);
+		details.setRoomType(type);
+		details.setCheckInDate(Date.valueOf(checkInDate));
+		details.setCheckOutDate(Date.valueOf(checkOutDate));
+		details.setDuration(duration);
+		details.setRent(totalRent);
+		details.setAaadhar(proImage);
+		
+		//saving the details in the database
+		BookDetailsDao bookDetailsDao=new BookDetailsDao();
+		bookDetailsDao.save(details);
+		
+		//get a room available in database
+		BookDetailsDao bookDetailsDao1=new BookDetailsDao();
+		int availablerooms=bookDetailsDao1.avaliableRooms(type);
+		
+		request.setAttribute("availablerooms", availablerooms);
+		System.out.println("AR: "+availablerooms);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("Available.jsp");
+		dispatcher.forward(request, response);
+		
+		//get a user email from database
+		Hostel email = new HostelDao().getEmail(username);
+				
+		//send a details in book confirm servlet
+		request.setAttribute("username", username);
+		request.setAttribute("email", email);
+		request.setAttribute("type", type);
+		request.setAttribute("rentPerDay", price);
+		request.setAttribute("checkInDate", checkInDate);
+		request.setAttribute("checkOutDate", checkOutDate);
+		request.setAttribute("duration", duration);
+		request.setAttribute("totalRent", totalRent);
+		request.setAttribute("cgst", cgst);
+		request.setAttribute("sgst", sgst);
+		request.setAttribute("discount", discount);
+		request.setAttribute("totalPrice", totalPrice);
+		
+		RequestDispatcher dispatcher1 = request.getRequestDispatcher("BookingConfrimServlet");
+		
+	private int calculateDaysBetween(LocalDate date1, LocalDate date2) {
+		// Calculate the difference using ChronoUnit
+				long daysBetween = ChronoUnit.DAYS.between(date1, date2);
+				// Return the absolute value to ensure positive number of days
+				return (int)Math.abs(daysBetween);
+	}
+
+}

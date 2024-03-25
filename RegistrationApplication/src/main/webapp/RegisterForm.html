@@ -1,0 +1,104 @@
+<html>
+	<head>
+	  <title>RegisterAppp...</title>
+    </head>
+
+    <body bgcolor="sky blue">	
+		<h1 align="center">Register Form....</h1>
+		<table align="center">
+			<form method="get" action="./RegisterServlet">
+			
+			<tr>
+				<td><label>UserName :</label></td>
+				<td colspan="2"><input type="text" name="UserName" placeholder="enter username" required /></td>
+			</tr>
+			
+			<tr></tr>
+					
+			<tr>
+				<td><label>Password :</label></td>
+				<td colspan="2"><input type="Password" name="Password" placeholder="enter password" required / ></td>
+			</tr>
+			
+			<tr></tr>
+				
+			<tr>
+				<td><label>E-mail:</label></td>
+				<td colspan="2"><input type="email" name="email" required/></td>
+			</tr>
+			
+			<tr></tr>
+				
+			<tr>
+				<td><label>Mobile :</label></td>
+				<td colspan="2"><input type="number" name="mobile" required/></td>
+			</tr>
+					
+			<tr></tr>
+			
+			<tr>
+				<td><label>Gender :</label></td>
+				<td><input type="radio" name="gender" value="MALE" />MALE</td>
+				<td><input type="radio" name="gender" value="FEMALE" />FEMALE</td>
+			</tr>
+
+			<tr></tr>
+			
+			<tr>
+				<td><label>Select DOB :</label></td>
+				<td colspan="2"><input type="date" name="dob" required /></td>
+			</tr>
+			
+			<tr></tr>			
+			
+			<tr>					
+				<td rowspan="2"><label>Qualification :</label></td>
+				<td><input type="checkbox" value="BSC"  name="qualification" value="BSC"/>BSC</td>
+				<td><input type="checkbox" value="MCA"  name="qualification" value="MCA"/>MCA</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" value="BTECH"  name="qualification" value="BTECH"/>BTECH</td>
+				<td><input type="checkbox" value="MTECH"  name="qualification" value="MTECH"/>MTECH</td>
+			</tr>
+			
+			<tr></tr>
+			
+			<tr>
+				<td><label>country :</label></td>
+				<td colspan="2"><Select name="country">
+					<option>India</option>
+					<option>Russia</option>
+					<option>China</option>
+				</select></td>
+			</tr>
+			
+			<tr></tr>
+			
+			<tr>
+				<td><label>Select language :</label></td>
+				<td colspan="2"><Select name="language" size="2" multiple>
+					<option>tamil</option>
+					<option>telugu</option>
+					<option>english</option>
+					<option>kannada</option>
+				</select></td>
+			</tr>
+			
+			<tr></tr>			
+			
+			<tr>
+				<th><label><h5>Comments :</h5></label></th>
+				<td colspan="2"><textarea name="comments" rows="3" cols="25"></textarea> </td>
+			</tr>
+			
+			<tr></tr>
+			
+			<tr>
+				<th colspan="3"><input type="submit" value="Register"/></th>
+			</tr>						
+						
+		</form>
+	</body>
+</html>
+
+

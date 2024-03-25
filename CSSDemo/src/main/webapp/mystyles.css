@@ -1,0 +1,19 @@
+h1,h3{
+	color: green;
+	text-align: center;
+}
+.highlight{
+	background-color: purple;
+	padding: 30px;
+	border: 2px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+#mydesgin{
+	background-color: red;
+	padding: 30px;
+	border: 2px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	
+}

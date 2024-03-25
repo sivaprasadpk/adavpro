@@ -1,0 +1,61 @@
+package com.sathya.servlet;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+
+public class HostelDao
+{
+	public int save(Hostel hostel)
+	{
+		int count=0;
+		//Connection connection=null;
+		PreparedStatement preparedstatement =null;
+		try
+		{
+			Connection connection=HostelDbconnection.createConnection();
+			preparedstatement=connection.prepareStatement("insert into hostel_datails values(?,?,?,?,?,?,?)");
+			
+			preparedstatement.setString(1, hostel.getName());
+			preparedstatement.setString(2, hostel.getUsername());
+			preparedstatement.setString(3, hostel.getPassword());
+			preparedstatement.setString(4, hostel.getCpassword());
+			preparedstatement.setString(5, hostel.getEmail());
+			preparedstatement.setLong(6, hostel.getMobile());
+			preparedstatement.setString(7, hostel.getAddress());
+			
+			count=preparedstatement.executeUpdate();
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		return count;
+		}
+	
+	public String getUserName(String username)
+	{
+		String s=null;
+		PreparedStatement preparedstatement =null;
+		try
+		{
+			Connection connection=HostelDbconnection.createConnection();
+			preparedstatement=connection.prepareStatement("select username from hostel_datails where username=?");
+			
+			preparedstatement.setString(1,username);
+			
+			ResultSet resultSet=preparedstatement.executeQuery();
+			if(resultSet.next())
+			{
+				s=resultSet.getString(1);
+			}
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		return s;
+	}
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+
+function cutFruitPieces(fruit)
+{
+	return fruit*4;
+}
+function fruitProcessor(apple,orange)
+{
+	var appslices=cutFruitPieces(apple);
+	var orgslices=cutFruitPieces(orange);
+	
+	return "juice preparing with"+appslices+"applepieces &"+orgslices+"orangepieces"; 
+}
+var res=fruitProcessor(8,6);
+document.write(res);
+
+</script>
+</head>
+<body>
+</body>
+</html>

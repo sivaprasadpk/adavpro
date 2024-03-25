@@ -1,0 +1,35 @@
+<html>
+
+<head>
+	<title>Bill Count....</title>
+</head>
+
+<body bgcolor="pink">
+	<h1>Product Details....</h1>
+	<form method="get" action="./ProductServlet">
+		<label>ProductId :</label>
+		<input type="number" name="proId" placeholder="enter Idname" required />
+	
+		<br><br>
+	
+		<label>ProductName :</label>
+		<input type="text" name="proName" placeholder="enter productname" required />
+	
+		<br><br>
+	
+		<label>ProductPrice :</label>
+		<input type="number" name="proPrice" placeholder="enter price" required />
+	
+		<br><br>
+	
+		<label>ProductQuantity :</label>
+		<input type="number" name="proQuantity" min="2" max="10" placeholder="enter quantity" required />
+	
+		<br><br>
+	
+		<input type="submit" value="ProductInvoice" />
+
+	</form>
+</body>
+
+</html>

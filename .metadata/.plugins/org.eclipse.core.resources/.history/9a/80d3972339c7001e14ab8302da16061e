@@ -1,0 +1,106 @@
+package com.sathya.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/GenerateNumberServlet")
+public class GenerateNumberServlet extends HttpServlet {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// step-1
+		int num1 = Integer.parseInt(request.getParameter("first"));
+		int num2 = Integer.parseInt(request.getParameter("second"));
+		String operation = request.getParameter("operation");
+
+		// step-2
+
+		List<Integer> l = new ArrayList<Integer>();
+		switch (operation) {
+		case "Even":
+			for (int i = num1; i <= num2; i++) {
+				if (i % 2 == 0)
+					l.add(i);
+			}
+			break;
+
+		case "Odd":
+			for (int i = num1; i <= num2; i++) {
+				if (i % 2 == 1)
+					l.add(i);
+			}
+			break;
+
+		case "Prime":for (int i = num1; i <= num2; i++)
+						{
+							int j=2,f=0;
+							while(j<=i/2)
+							{
+								if(i%j==0)
+								{
+									f=1;
+									break;
+								}
+								j++;
+							}
+							
+							if(f!=0)
+								l.add(i);						
+						}
+						
+			
+			
+		case "Perfect":
+			int sum = 0;
+			for (int i = num1; i <= num2; i++) {
+				sum = 0;
+				for (int j = 1; j < i; j++) {
+					if (i % j == 0)
+						sum = sum + j;
+				}
+				if (sum == i)
+					l.add(i);
+			}
+			break;
+
+		case "Strong":
+			int s1 = 0, rem = 0;
+			for (int i = num1; i <= num2; i++) {
+				int temp = i;
+				s1 = 0;
+				int fact = 1;
+				while (temp > 0) {
+					rem = temp % 10;
+					for (int j = 1; j <= rem; j++) {
+						fact = fact * j;
+					}
+					s1 = s1 + fact;
+					temp = temp / 10;
+
+				}
+				if (s1 == i)
+					l.add(i);
+			}
+
+		}
+
+		// step-3
+		response.setContentType("text/html");
+		PrintWriter writer = response.getWriter();
+		writer.println("<html>");
+		writer.println("<body bgcolor=" + "pink" + ">");
+		writer.println("Enter the StartNumber :" + num1 + "<br>");
+		writer.println("Enter the EndNumber:   " + num2 + "<br>");
+		writer.println("Enter the operation:  " + operation + "<br>");
+		writer.println("result :" + l);
+		writer.println("</body>");
+		writer.println("</html>");
+
+	}
+
+}

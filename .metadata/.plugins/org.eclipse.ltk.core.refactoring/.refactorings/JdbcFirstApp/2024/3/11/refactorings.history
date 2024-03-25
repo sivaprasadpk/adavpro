@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;DbConnection.java&apos; to &apos;LoginProjecct/src/main/java/com.sathya.servlet&apos;&#x0D;&#x0A;- Original project: &apos;JdbcFirstApp&apos;&#x0D;&#x0A;- Destination element: &apos;LoginProjecct/src/main/java/com.sathya.servlet&apos;&#x0D;&#x0A;- Original element: &apos;com.sathya.jdbc.DbConnection.java&apos;" description="Copy compilation unit" destination="=LoginProjecct/src\/main\/java&lt;com.sathya.servlet" element1="/src&lt;com.sathya.jdbc{DbConnection.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1710059373904" units="1" version="1.0"/>
+</session>

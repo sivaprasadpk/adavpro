@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Get in Touch</h2>
+            <p>If you have any questions or would like to make a reservation, please don't hesitate to contact us:</p>
+            <ul>
+                <li>Email: info@yourhostel.com</li>
+                <li>Phone: +1 (123) 456-7890</li>
+                <li>Address: 123 Hostel Street, City, Country</li>
+            </ul>
+            <!-- Add any additional contact information or forms here -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Hostel. All rights reserved.</p>
+    </footer>
+</body>
+</html>

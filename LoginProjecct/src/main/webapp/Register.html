@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Here</title>
+<link rel="stylesheet" type="text/css" href="Register.css">
+ <script src="Register.js"></script>
+</head>
+<body background="back.jpg">
+<form class=center  method="post" action="RegisterServlet" onsubmit="return validateForm()">
+<h3>Register page</h3>
+
+<div >
+	<label class="bold-label">Name :</label>
+	<input type="text" name="Name" id="Name" placeholder="enter name" required /><br><br>
+</div>
+
+<div >
+	<label class="bold-label">UserName :</label>
+	<input type="text" name="UserName" id="UserName" placeholder="enter username" required /><br><br>
+</div>
+
+<div>
+	<label class="bold-label">Password :</label>
+	<input type="password" name="Password" id="Password" placeholder="enter password" required /><br><br>
+</div>
+
+<div>
+	<label class="bold-label">Confirm Password :</label>
+	<input type="password" name="" id="confrim" placeholder="confrim password" required /><br><br>
+</div>
+
+<div>
+	<label class="bold-label">E-mail:</label>
+	<input type="email" name="email" id="email" required/>
+</div>
+
+<div>
+	<label class="bold-label">Mobile :</label>
+	<input type="number" name="Mobile" id="Mobile" placeholder="enter mobile" required /><br><br>
+</div>
+
+<div>
+	<label class="bold-label">Address:</label>
+	<textarea name="address" rows="3" cols="25"></textarea>
+<br>
+</div>
+     <center><input type="submit" value="Register"/></center>
+
+<h5>Already have an account</h5>
+
+<a href="Login.html">Login</a>
+
+</form>
+</body>
+</html>

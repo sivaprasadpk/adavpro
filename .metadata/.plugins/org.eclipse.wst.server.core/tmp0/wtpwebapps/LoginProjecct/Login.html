@@ -1,0 +1,32 @@
+<html>
+	<head>
+	  <title>Login Form..</title>
+	  <link rel="stylesheet" type="text/css" href="Mystyles.css">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	  <script type="text/javascript" src=Login.js></script>
+         </head>
+            <body background="download.jfif">
+				<h1>Login Page</h1>
+					<form method="get" action="LoginServlet" onsubmit="return loginValidation()">
+					<div>
+						<label>UserName :</label>
+							<input type="text" name="UserName" id="UserName"
+								placeholder="username" required />
+								<br><br>
+					</div>
+					<div>
+						<label>Password :</label>
+							<input type="Password" name="Password" id="Password"
+								placeholder="password" required >
+								
+					</div>
+							
+								<input type="submit" value="Login"/><br><br>
+					<div>
+								<label>Don't have an account</label>
+								<a href="Register.html">Register</a>
+					</div>
+			
+			        </form>
+			</body>
+</html>

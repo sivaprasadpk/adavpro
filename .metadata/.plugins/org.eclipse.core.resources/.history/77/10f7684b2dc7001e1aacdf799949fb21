@@ -1,0 +1,43 @@
+package com.sathya.servlet;
+
+import java.io.IOException;
+import java.util.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+@WebServlet("/GenerateNumberServlet")
+public class GenerateNumberServlet extends HttpServlet 
+{
+		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+		{
+			//step-1
+			int num1=Integer.parseInt(request.getParameter("first"));
+			int num2=Integer.parseInt(request.getParameter("second"));
+			String operation=request.getParameter("operation");
+			
+			//step-2
+			
+			List<Integer> l=new ArrayList<Integer>();
+			switch(operation)
+			{
+				case "Even": for(int i=num1;i<=num2;i++)
+								{
+									if(i%2==0)
+										l.add(i);
+								}
+								break;
+								
+				case "Odd": for(int i=num1;i<=num2;i++)
+								{
+									if(i%2==1)
+										l.add(i);
+								}
+								break;
+			
+			}
+			
+		}
+
+}

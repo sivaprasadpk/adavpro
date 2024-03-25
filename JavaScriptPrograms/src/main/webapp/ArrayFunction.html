@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Arrays Function</title>
+<script type="text/javascript">
+let a=[10,20,30,40,50,60];
+
+//1.push()->is use to add a element in a array
+a.push(70);
+a.push(80,90);
+console.log(a);
+
+//2.pop()->remove a last element in a array
+a.pop();
+console.log(a);
+
+//3.shift()->remove a first element in array
+a.shift();
+console.log(a);
+
+//4.unshift()->add a element in a begining of a array
+a.unshift(0);
+a.unshift(10,11);
+console.log(a);
+
+//5.splice()->it takes a 3 argument 1.index 2.delete 3.insert
+a.splice(2,1);
+a.splice(2,0,4);
+console.log(a);
+
+//6.slice()->it takes a 2 argument based on index without disturb a original array and copy into new array
+let s=a.slice(1,3);
+document.write(s);
+
+//7.concat()->it take a two seperate  arrays convert into a single array
+let b=[1,2];
+let c=[3,4];
+let d=b.concat(c);
+console.log(d);
+
+//8.join()->
+</script>
+</head>
+<body>
+
+</body>
+</html>

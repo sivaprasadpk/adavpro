@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+
+//step-1
+var massRatan=parseInt(prompt("enter the mass"));
+var heightRatan=parseFloat(prompt("enter the heightRatan"));
+var massAnu=parseInt(prompt("enter the mass"));
+var heightAnu=parseFloat(prompt("enter the heightAnu"));
+//step-2
+var BMIRatan=massRatan/(heightRatan * heightRatan);
+var BMIAnu=massAnu/(heightAnu * heightAnu);
+//step-3
+console.log("BMIRatan"+"<br>");
+console.log("BMIAnu"+"<br>")
+
+//step-4
+document.write("BMIRatan...."+BMIRatan+"<br>")
+document.write("BMIAnu...."+BMIAnu+"<br>")
+//step-5
+var RatanHigherBMI;
+if(BMIRatan>BMIAnu)
+	RatanHigherBMI=true;
+else
+	RatanHigherBMI=false;
+	
+	
+	console.log("Ratan has a higher BMI than Anu"+RatanHigherBMI+"<br>");
+	document.write("Ratan has a higher BMI than Anu"+RatanHigherBMI+"<br>");
+	
+	
+
+</script>
+</head>
+<body>
+</body>
+</html>

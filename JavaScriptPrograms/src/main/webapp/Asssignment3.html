@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+function average(a,b,c)
+{
+	return (a+b+c)/3;
+}
+var dolphins=average(96,108,89);
+var kaalas=average(88,91,110);
+if(dolphins>=100 && kaalas>=100)
+{
+	if(dolphins>kaalas)
+		document.write("Dolphins win");
+	else if(kaalas===dolphins)
+		document.write("their average scroce are equal");
+	else
+		document.write("kaalas win");
+}
+else
+	{
+	if(dolphins>=100)
+		document.write("Dolphins win");
+	else if(kaalas>=100)
+		document.write("kaalas win");
+	else
+	document.write("both team average is not greater than 100")
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

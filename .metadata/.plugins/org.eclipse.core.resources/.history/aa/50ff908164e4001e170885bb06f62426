@@ -1,0 +1,27 @@
+function bookValidate() {
+    var username = document.getElementById('UserName').value;
+    var checkInDate = document.getElementById('checkin').value;
+    var checkOutDate = document.getElementById('checkout').value;
+    var adhaarNum = document.getElementById('adhaarNum').value;
+
+    // Check if any field is empty
+    if (username.trim() === "" || checkInDate.trim() === "" || checkOutDate.trim() === "" || adhaarNum.trim() === "") {
+        alert('Please fill in all the fields.');
+        return false;
+    }
+
+    // Check if check-in date is not less than today
+    var today = new Date().toISOString().split('T')[0];
+    if (checkInDate < today) {
+        alert('Check-in date should not be less than today.');
+        return false;
+    }
+
+    // Check if check-out date is not less than check-in date
+    if (checkOutDate < checkInDate) {
+        alert('Check-out date should not be less than check-in date.');
+        return false;
+    }
+
+    return true
+    }

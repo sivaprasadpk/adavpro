@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <!-- Add any additional styling or links to CSS files here -->
+</head>
+<body>
+    <header>
+        <h1>About Our Hostel</h1>
+    </header>
+    <nav>
+        <!-- Add navigation links here if needed -->
+    </nav>
+    <main>
+        <section>
+            <h2>Welcome to Our Hostel!</h2>
+            <p>We are delighted to introduce you to our hostel. Here's a brief overview of what we offer:</p>
+            <ul>
+                <li>Comfortable and affordable rooms</li>
+                <li>24/7 reception and security</li>
+                <li>Free Wi-Fi access</li>
+                <li>Laundry facilities</li>
+                <li>Common areas for socializing</li>
+                <li>Convenient location near major attractions</li>
+            </ul>
+            <p>Whether you're traveling solo, with friends, or family, our hostel provides the perfect accommodation option for budget-conscious travelers.</p>
+        </section>
+        <section>
+            <h2>Our Mission</h2>
+            <p>At our hostel, we strive to create a welcoming and inclusive environment for guests from all walks of life. Our mission is to offer comfortable, clean, and secure accommodations while fostering a sense of community among travelers.</p>
+        </section>
+        <section>
+            <h2>Contact Us</h2>
+            <p>If you have any questions or would like to make a reservation, please don't hesitate to contact us:</p>
+            <p>Email: info@yourhostel.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <!-- Add any additional contact information or forms here -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Hostel. All rights reserved.</p>
+    </footer>
+    <!-- Add any additional scripts or links to JavaScript files here -->
+</body>
+</html>

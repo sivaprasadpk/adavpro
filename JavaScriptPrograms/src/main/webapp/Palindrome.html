@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Palindrome</title>
+<script>
+let num=parseInt(prompt("enter the number"));
+let v=0;
+let temp=num,rem=0;
+while(temp>0)
+	{
+		rem=temp%10;
+		v=v*10+rem;
+		temp=parseInt(temp/10);
+		//console.log(v)
+	}
+	
+	//document.write(v)
+	if(num==v)
+		alert("its a palindrome");
+	else
+		alert("its not a palindrome")
+</script>
+</head>
+<body>
+
+</body>
+</html>

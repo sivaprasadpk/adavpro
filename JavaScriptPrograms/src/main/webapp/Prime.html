@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+let num1=parseInt(prompt("enter the number"));
+let f=0;
+for(let i=2;i<=num1/2;i++)
+{
+	if(num1%i==0)
+	{
+		f=1;
+		break;
+	}
+}
+if(f==1)
+	document.write(" not prime number"+num1);
+else
+	document.write(" prime number" +num1);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
